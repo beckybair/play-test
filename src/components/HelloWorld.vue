@@ -1,8 +1,13 @@
 <template>
   <div class="hello container">
     <h1>{{ msg }}</h1>
+    <p class="h3">
+      <button class="btn btn-primary" @click="vertical">
+        {{ (isVertical) ? "Horizontal" : "Vertical" }}
+      </button>
+    </p>
 
-  <Slides />
+  <Slides :vertical="isVertical" />
   
   </div>
 </template>
@@ -15,6 +20,16 @@ export default {
   components: { Slides },
    props: {
     msg: String
+  },
+  data () {
+    return {
+      isVertical: false
+    }
+  },
+  methods: {
+    vertical () {
+      this.isVertical = !this.isVertical
+    }
   }
 }
 </script>
