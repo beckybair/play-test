@@ -1,5 +1,5 @@
 <template>
-  <div class="hello container">
+  <div class="hello">
     <h1>{{ msg }}</h1>
     <p class="h3">
       <button class="btn btn-primary" @click="vertical">
@@ -7,7 +7,7 @@
       </button>
     </p>
 
-  <Slides :vertical="isVertical" />
+  <Slides :vertical="isVertical" :show-transition="true" />
   
   </div>
 </template>

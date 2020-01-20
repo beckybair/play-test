@@ -18,6 +18,7 @@
     <div class="slides">
       <div
         class="slides-inner"
+        :class="{ transition: showTransition }"
         :style="{ width: innerWidth + 'px', marginLeft: '-' + slidesInnerMarginLeft + 'px' }"
       >
         <Slide
@@ -53,6 +54,10 @@ export default {
     showNav: {
       type: Boolean,
       default: true
+    },
+    showTransition: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -75,9 +80,11 @@ export default {
     }
   },
   mounted () {
+    console.log(this.$el.lastChild.firstChild.firstChild.firstChild.naturalWidth)
+    // this.singleWidth = this.$el.lastChild.firstChild.firstChild.firstChild.naturalWidth
     this.singleWidth = this.$el.clientWidth/this.itemsPerSlide
-    this.currentIndex = this.startingIndex
     this.innerWidth = this.singleWidth * this.slides.length
+    this.currentIndex = this.startingIndex
   },
   methods: {
     goToPrev () {
@@ -104,7 +111,7 @@ export default {
   overflow: hidden;
   text-align: center;
 }
-.slides-inner {
+.transition {
   transition: margin 0.6s ease-out;
 }
 .nav-item {
