@@ -80,7 +80,7 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$el.lastChild.firstChild.firstChild.firstChild.naturalWidth)
+    // console.log(this.$el.lastChild.firstChild.firstChild.firstChild.naturalWidth)
     // this.singleWidth = this.$el.lastChild.firstChild.firstChild.firstChild.naturalWidth
     this.singleWidth = this.$el.clientWidth/this.itemsPerSlide
     this.innerWidth = this.singleWidth * this.slides.length

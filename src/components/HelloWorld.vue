@@ -5,9 +5,12 @@
       <button class="btn btn-primary" @click="vertical">
         {{ (isVertical) ? "Horizontal" : "Vertical" }}
       </button>
+      <button class="btn btn-primary ml-3" @click="transition">
+        {{ (showTransition) ? "No Transition" : "Transition" }}
+      </button>
     </p>
 
-  <Slides :vertical="isVertical" :show-transition="true" />
+  <Slides :vertical="isVertical" :show-transition="showTransition" />
   
   </div>
 </template>
@@ -23,12 +26,16 @@ export default {
   },
   data () {
     return {
-      isVertical: false
+      isVertical: false,
+      showTransition: true
     }
   },
   methods: {
     vertical () {
       this.isVertical = !this.isVertical
+    },
+    transition () {
+      this.showTransition = !this.showTransition
     }
   }
 }
