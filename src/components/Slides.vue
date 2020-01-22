@@ -10,7 +10,7 @@
         :class="[index === currentIndex ? 'current' : '']"
         @click="goToSlideIndex(index)"
       >
-        <Slide :slide="slide" />
+        <Slide :slide="slide" :navSlide="true" />
       </div>
       <div class="mx-auto" @click="goToNext"><i :class="`fas fa-chevron-${vertical ? 'down' : 'right'}`"></i></div>
     </div>
@@ -25,6 +25,7 @@
           v-for="(slide, i) in slides"
           :key="i"
           :slide="slide"
+          :zoomOn="true"
           :style="{ width: singleWidth + 'px' }"
         />
       </div>
